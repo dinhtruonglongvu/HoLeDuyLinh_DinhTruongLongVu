@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách 1234</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/style-story.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <script>
+        var product = [
+        {
+            id: 28,
+            name: 'Cô Gái Đến Từ Hôm Qua',
+            author: 'Nguyễn Nhật Ánh',
+            price: 139000,
+            img:  "https://danviet.mediacdn.vn/thumb_w/650/296231569849192448/2022/4/30/chelsea-02-16512775612291913453497.png"
+        },
+    ]
+    // localStorage.setItem('product', JSON.stringify(product));
+    var product = JSON.parse(localStorage.getItem('product'));
+    var id_product = localStorage.getItem('id');
+
+    var sp = product.find(sp => sp.id_product == id_product)
+
+     $(document).ready(function(){
+            $("#title").html(sp.name)
+            $("#demo").html(sp.img)
+
+        })
+
+    </script>
+
+    <div id="wrapper">
+        <div id="header" class="mb-3">
+            <div class="left-header">
+                <a href="index.html"><img src="./images/logo-3.png" style="width: 70px; position: absolute; top: -15px;" alt="" id="logo"></a>
+                <a href="index.html" class="header-title">VBookStore</a>
+            </div>
+            <div class="center-header">
+                <input type="search" id="search-bar" placeholder="Tìm sách mà bạn muốn....">
+                <label for=""><i class="fa-solid fa-magnifying-glass" id="search-toggle"></i></label> 
+            </div>
+            <div class="left-header">
+                <i class="fa-solid fa-user" id="user-toggle"></i>
+                <i class="fa-solid fa-cart-shopping" id="shopping-toggle"></i>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <ul id="main-menu" class="mb-2">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="product.html">Sách</a>
+                <ul class="sub-menu">
+                    <li><a href="culture-book.html">Tư duy - Văn hoá</a></li>
+                    <li><a href="story-book.html">Truyện - Tiểu thuyết</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">Đăng ký</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+        <!-- end menu -->
+
+        <div id="form-login">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5>Đăng nhập</h5>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="txtusername">Tài khoản</label>
+                            <input type="text" name="txtusername" id="txtusername">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtpass">Mật khẩu</label>
+                            <input type="password" name="txtpass" id="txtpass">
+                        </div>
+                        <div  class="btn-login">
+                            <button type="button">Đăng nhập</button>
+                        </div> 
+                    </form>
+                </div>
+                <!-- end form-login -->
+
+                <div class="container">
+                    <div id="book-product" class="mt-5">
+                        <div class="col-md-12 text-center product-title">
+                            <span class="text-uppercase text-dark bg-white">Chi tiết sản phẩm</span>
+                        </div>
+                    <div id="title">
+
+                    </div>
+                    <img src='' id="demo" alt="">
+                    </div>
+                    <!-- end product -->
+                   
+                    <div class="container">
+                        <div class="col-lg-12 border p-3 main-section bg-white ">
+                            <div class="row m-0">
+                                <div class="col-lg-4 left-side-product-box pb-3">
+                                    <span class="sub-img">
+                                        <img src="./images/book-28.PNG" class="border" height="500px" width="300px">
+                                    </span>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="right-side-pro-detail border p-3 m-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h5>Cô Gái Đến Từ Hôm Qua</h5>
+                                                <p>Nguyễn Nhật Ánh</p>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <p class="price">139.000đ</p>
+                                                <hr class="p-0 m-0">
+                                            </div>
+                                            <div class="col-lg-12 pt-2">
+                                                <h5>Nội dung</h5>
+                                                <span>Câu chuyện trong “Cô Gái Đến Từ Hôm Qua” kể về mối tình học trò của chàng trai 
+                                                    tên Anh Thư và cô bạn cùng lớp tên Việt An. Cùng với sự giúp đỡ nhiệt tình của “quân sư” 
+                                                    Hải- người bạn thân của mình, Anh Thư đã tìm mọi cách để gây ấn tượng và bày tỏ tình cảm chân thành với Việt An. Nhưng, sau quá trình “cưa đổ” cô nàng, Anh Thư lại nhận ra Việt An chính là cô bạn nhỏ Tiểu Ly thân thiết thời thơ ấu của mình. Cảm xúc trực trào, vừa ngạc nhiên, vừa vui mừng, lại có chút nghẹn ngào đến với đôi bạn Anh Thư- Việt An. Một mối tình như đã được định mệnh sắp đặt sẵn..</span>
+                                                <hr class="m-0 pt-2 mt-2">
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <p class="tag-section">
+                                                    <strong>Tag : </strong><a href="">Thiếu nhi</a><a href=""> , Nguyễn Nhật Ánh</a>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h6>Số lượng :</h6>
+                                                <input type="number" class="form-control text-center w-100" value="1">
+                                            </div>
+                                            <div class="col-lg-12 mt-3">
+                                                <div class="row">
+                                                    <div class="col-lg-6 pb-2">
+                                                        <a href="#" class="btn btn-danger w-100">Thêm vào giỏ</a>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <a href="#" class="btn btn-success w-100">Thanh toán ngay</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+
+                <div id="footer">
+                      <div class="box-content">
+                        <h5 class="box-title">Liên kết chính</h5>
+                        <a href="index.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Trang chủ</a>
+                        <a href="about.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Giới thiệu</a>
+                        <a href="register.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Đăng ký</a>
+                        <a href="product.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Sản phẩm</a>
+                        <a href="sitemap.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Sitemap</a>
+                    </div>
+                    <div class="box-content">
+                        <h5>Liên kết phụ</h5>
+                        <a href="culture-book.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Tư duy</a>
+                        <a href="story-book.html" target="blank"><i class="fa-solid fa-arrow-right"></i> Truyện</a>
+                        <a href=""><i class="fa-solid fa-arrow-right"></i> Đăng nhập</a>
+                        <a href=""><i class="fa-solid fa-arrow-right"></i> Giỏ hàng</a>
+                        <a href=""><i class="fa-solid fa-arrow-right"></i> Khác</a>
+                    </div>
+                    <div class="box-content">
+                        <h5>Liên hệ</h5>
+                        <a href=""><i class="fa-solid fa-phone"></i> 1900361888</a>
+                        <a href=""><i class="fa-solid fa-phone"></i> 1808432100</a>
+                        <a href="https://mail.google.com/" target="blank"><i class="fa-solid fa-envelope"></i> Vbookstore@gmail.com</a>
+                        <a href=""><i class="fa-solid fa-location-dot"></i> Lê Đức Thọ, Q.GV, TP.HCM</a>
+                    </div>
+                    <div class="box-content">
+                        <h5>Theo dõi</h5>
+                        <a href="https://www.facebook.com/" target="blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://www.tiktok.com/" target="blank"><i class="fa-brands fa-tiktok"></i> Tiktok</a>
+                        <a href="https://www.instagram.com/" target="blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://www.youtube.com/" target="blank"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                    </div>  
+                </div>
+                <!-- end footer -->
+
+                <div class="design-by">
+                    <p>© copyright @ by <span>Đinh Trường Long Vũ </span> - <span>Hồ Lê Duy linh </span></p>
+                </div>
+                </div>          
+    </div>
+</body>
+</html>
